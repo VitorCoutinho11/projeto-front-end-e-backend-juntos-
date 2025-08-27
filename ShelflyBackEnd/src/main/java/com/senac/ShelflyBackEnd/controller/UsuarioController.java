@@ -12,11 +12,11 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping
+@RequestMapping("api/usuario")
 @Tag(name = "Usuario", description = "API para gerenciamento de usuarios")
 public class UsuarioController {
 
-    private final UsuarioService usuarioService;
+    private UsuarioService usuarioService;
 
     public UsuarioController(UsuarioService usuarioService){
         this.usuarioService = usuarioService;
