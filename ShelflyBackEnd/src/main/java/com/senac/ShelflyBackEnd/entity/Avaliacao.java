@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 
 import java.awt.*;
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 @Entity
 public class Avaliacao {
@@ -19,7 +20,15 @@ public class Avaliacao {
     private String comentario;
 
     @Column(name = "avaliacao_dataAvaliacao")
-    private Timestamp dataAvaliacao;
+    private LocalDateTime dataAvaliacao;
+
+    @ManyToOne
+    @JoinColumn(name = "usuario_id")
+    private Usuario usuario;
+
+    @ManyToOne
+    @JoinColumn(name = "livro_id")
+    private Livro livro;
 
     public int getId() {
         return id;
@@ -45,11 +54,27 @@ public class Avaliacao {
         this.comentario = comentario;
     }
 
-    public Timestamp getDataAvaliacao() {
+    public LocalDateTime getDataAvaliacao() {
         return dataAvaliacao;
     }
 
-    public void setDataAvaliacao(Timestamp dataAvaliacao) {
+    public void setDataAvaliacao(LocalDateTime dataAvaliacao) {
         this.dataAvaliacao = dataAvaliacao;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+
+    public Livro getLivro() {
+        return livro;
+    }
+
+    public void setLivro(Livro livro) {
+        this.livro = livro;
     }
 }

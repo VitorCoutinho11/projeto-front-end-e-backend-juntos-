@@ -3,6 +3,7 @@ package com.senac.ShelflyBackEnd.entity;
 import jakarta.persistence.*;
 
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 @Entity
 public class Usuario {
@@ -21,7 +22,7 @@ public class Usuario {
     private String senha;
 
     @Column(name = "usuario_data")
-    private Timestamp data;
+    private LocalDateTime data;
 
     public int getId() {
         return id;
@@ -55,11 +56,11 @@ public class Usuario {
         this.senha = senha;
     }
 
-    public Timestamp getData() {
+    public LocalDateTime getData() {
         return data;
     }
 
-    public void setData(Timestamp data) {
+    public void setData(LocalDateTime data) {
         this.data = data;
     }
 }
