@@ -16,7 +16,7 @@ import java.util.List;
 @Tag(name = "Usuario", description = "API para gerenciamento de usuarios")
 public class UsuarioController {
 
-    private UsuarioService usuarioService;
+    private final UsuarioService usuarioService;
 
     public UsuarioController(UsuarioService usuarioService){
         this.usuarioService = usuarioService;
